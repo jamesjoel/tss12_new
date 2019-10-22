@@ -1,0 +1,43 @@
+.navbar-color ul li a{
+    
+    color: #021855;
+    
+}
+.navbar-color ul li a:hover{
+    color: #63B1FC !important;
+}
+.navbar-toggler-icon{
+    color: #021855;
+}
+.navbar-expand-sm .navbar-nav .nav-link {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    font-size: .8rem;
+}
+.navbar-expand-sm .navbar-nav .dropdown-item{
+    font-size: .8rem !important;
+
+}
+.bg-my-color{
+    background-color: #1C4FC4;
+}
+.text-my-color{
+    color: #7BBCFE;
+    text-decoration: underline;
+}
+
+
+
+.text-my-color:hover{
+    
+    color: #FFF !important;
+}
+.btn-border{
+    border-radius: 25px !important;
+    font-size: .8rem !important;
+}
+.my-font-size{
+    
+    font-size: .8rem !important;
+}
+/* #63B1FC */
