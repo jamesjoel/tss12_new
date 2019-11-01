@@ -1,0 +1,48 @@
+.my-color{
+    background-color:rgb(138, 1, 1);
+    
+}
+.navbar-brand::first-letter{
+    background-color: red;
+    color: white;
+
+}
+.nav-link{
+    color: black;
+}
+.content1{
+    text-align: center;
+    padding-bottom: 50%;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color:black !important;
+}
+
+
+
+
+.content1{
+background-image:url(image1/123.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: auto;
+}
+.content1 h1{
+    font-size: 50px;
+    padding-top: 50%;
+    color: white;
+    padding-left: 15%;
+    padding-right: 15%;
+
+}
+.content2 h1{
+    font-size: 50px;
+    text-align: center;
+    margin-top: 20px;
+}
+.content2 p{
+    text-align: center;
+    color: #0e0b0591;
+    font-size: medium;
+}
