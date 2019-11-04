@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("input").keyup(function(){
+				alert();
+			});
+
+
+			$("input").focus(function(){
+				$(this).css({
+					"background-color":"red"
+				})
+			});
+			$("input").blur(function(){
+				$(this).css({
+					"background-color":"green"
+				})
+			});		
+
+			$("select").change(function(){
+				alert();
+			});
+		});
+
+	</script>
+</head>
+<body>
+First <input type="text" />
+<Br />
+<Br />
+Second <input type="text" />
+<Br />
+<Br />
+Third <input type="text" />
+<Br />
+<Br />
+
+<select>
+	<option>Select</option>
+	<option>Indore</option>
+	<option>Bhopal</option>
+	<option>Mumbai</option>
+	<option>Pune</option>
+</select>
+
+
+
+</body>
+</html>
