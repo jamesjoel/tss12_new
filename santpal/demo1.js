@@ -64,7 +64,31 @@ var d = false; // boolean
         i.          +           Concatenation
         ii.         +=          Concatenation
 
+
+
+
+
 */
+
+
+var arr = ["james", "rohit", "rajat", "naina", "nidhi", "raj"];
+
+// console.log(arr[3]);
+var obj = {  a : "red", b : "blue", c : "blue", d : "yellow", e : "black"};
+// console.log(obj.d);
+// console.log(obj.b);
+
+var student = { 
+    name : "rohit",
+    age : 25,
+    city : "indore",
+    gender : "male",
+    address : "palaysia"
+};
+
+console.log(student.city);
+
+
 
 
 
