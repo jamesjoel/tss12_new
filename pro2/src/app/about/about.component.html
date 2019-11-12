@@ -1,0 +1,25 @@
+<h2>This is About Page</h2>
+
+<h3>{{ a }}</h3>
+
+<h3>{{ x+y }}</h3>
+<!--
+<h2>{{ data[0] }}</h2>
+<h2>{{ data[1] }}</h2>
+<h2>{{ data[2] }}</h2> -->
+
+
+<h3 *ngFor="let x of data">{{ x }}</h3>
+
+<table class="table table-hover table-dark table-bordered">
+    <tr>
+        <th>S.No.</th>
+        <th>Color Name</th>
+    </tr>
+    <tr *ngFor="let x of color; let n = index">
+        <td>{{ n+1 }}</td>
+        <td>{{ x }}</td>
+    </tr>
+</table>
+
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem aliquid aspernatur eius dignissimos natus nam beatae, tenetur consectetur, doloribus recusandae deserunt quis quisquam officiis, dolor facere impedit ipsam veniam nihil.</p>
