@@ -1,2 +1,40 @@
 <h1>This is Contct Page</h1>
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus earum quidem eaque nobis, ratione ipsa nam reiciendis ducimus ipsum nostrum explicabo enim accusamus modi rem natus omnis nihil iusto cupiditate! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut facere nihil praesentium voluptas dicta veritatis consectetur saepe animi doloremque voluptatum aliquam officia ea atque aspernatur inventore, ipsam ullam quam illo!</p>
+<!-- <h2 *ngIf="a">HELLO WORLD</h2> -->
+<!--
+<button (click)="demo()" class="btn btn-primary">Click</button>
+<hr />
+<form (submit)="demo10()">
+
+    <hr />
+    <input type="text" (focus)="demo2()" (blur)="demo4()" />
+    <br />
+    <br />
+    <input type="text" (blur)="demo3()"/>
+    <br />
+    <br />
+    <input type="text" />
+    
+        <br />
+        <input type="submit" />
+</form>
+-->
+<button (click)="demo()">Click</button>
+<br />
+<Hr />
+<!-- 
+<span *ngIf="a==10 && b<=200; then cond1 else cond2"></span>
+
+<ng-template #cond1>IF is Woring</ng-template>
+<ng-template #cond2>ELSE is Woring</ng-template>
+-->
+<ng-template [ngIf]="a" [ngIfElse]="cond">
+    this is if is true
+</ng-template>
+<ng-template #cond>
+    this is else in woring
+</ng-template>
+
+
+
+

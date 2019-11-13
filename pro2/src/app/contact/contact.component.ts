@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
+  a=true;
+
   constructor() { }
 
   ngOnInit() {
   }
+
+  demo(){
+    this.a = !this.a;
+  }
+  
+
 
 }
