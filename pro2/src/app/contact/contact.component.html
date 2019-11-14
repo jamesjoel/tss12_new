@@ -36,5 +36,22 @@
 </ng-template>
 
 
+<div [ngSwitch]="color">
+    <h1 *ngSwitchCase="'red'">This is RED Color</h1>
+    <h1 *ngSwitchCase="'green'">This is GREEN Color</h1>
+    <h1 *ngSwitchCase="'blue'">This is BLUE Color</h1>
+    <h1 *ngSwitchCase="'yellow'">This is YELLOW Color</h1>
+</div>
+
+Your Color Name <input type="text" [(ngModel)]="color"/>
+
+
+<input type="text" [(ngModel)]="myobj['background-color']" />
+<input type="text" [(ngModel)]="myobj.height" />
+
+
+
+
+
 
 

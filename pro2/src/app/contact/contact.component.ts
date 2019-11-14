@@ -8,6 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class ContactComponent implements OnInit {
 
   a=true;
+  color = "red";
+
+
+  myobj={
+    'background-color':'blue',
+    'height' : '100px',
+    'width' : '100px'
+  }
 
   constructor() { }
 
