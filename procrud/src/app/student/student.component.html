@@ -20,19 +20,37 @@
                     <td>{{ x.name }}</td>
                     <td>{{ x.age }}</td>
                     <td>{{ x.fee }}</td>
-                    <td><button class="btn btn-sm btn-info">Edit</button></td>
-                    <td><button class="btn btn-sm btn-danger">Delete</button></td>
+                    <td><button class="btn btn-sm btn-info" data-target="#addModal" data-toggle="modal" (click)="askEdit(x)">Edit</button></td>
+                    <td><button class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delModal" (click)="askDelete(x)">Delete</button></td>
                 </tr>
             </table>
         </div>
     </div>
 </div>
+<div class="modal fade" id="delModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Delete Student</h3>
+            </div>
+            <div class="modal-body">
+                <p>Are You Sure Want to Delete <b>{{ oneStudent.name }}</b></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger" data-dismiss="modal" (click)="delete()">Delete</button>
+                <button class="btn btn-info" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 <div id="addModal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>Add New Student Here</h2>
+                <h2>{{ student.id ? "Update" : "Add New" }} Student Here</h2>
             </div>
             <div class="modal-body">
                 <div class="form-group">
@@ -50,8 +68,8 @@
 
             </div>
             <div class="modal-footer">
-                <button class="btn btn-success" data-dismiss="modal" (click)="save()">Save</button>
-                <button class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button class="btn btn-success" data-dismiss="modal" (click)="save()">{{ student.id ? "Update" : "Add" }}</button>
+                <button class="btn btn-danger" (click)="clearData()" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
