@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'pro3';
+  title:string = 'pro3';
+  name:string="rohit";
+  pData:number;
+  x:number;
+
+
+  childData(){
+    this.pData=this.x;
+  }
+
+
 }
