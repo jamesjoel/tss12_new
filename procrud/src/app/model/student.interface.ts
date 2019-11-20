@@ -1,0 +1,12 @@
+export interface Student {
+    id?: number,
+    name: string,
+    age: number,
+    fee: number
+}
+export interface Teacher{
+    id? : number,
+    name : string
+
+}
+

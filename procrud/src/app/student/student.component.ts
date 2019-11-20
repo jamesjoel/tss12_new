@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Student } from '../model/student.interface';
+
 
 @Component({
   selector: 'app-student',
@@ -7,8 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentComponent implements OnInit {
 
-  student={
-    id: null,
+  student:Student={
+    id : null,
     name : "",
     age : null,
     fee : null
@@ -16,7 +18,7 @@ export class StudentComponent implements OnInit {
 
 
 
-  studentArr=[
+  studentArr:Student[]=[
     {
       id : 1,
       name : "rohit",
@@ -44,7 +46,7 @@ export class StudentComponent implements OnInit {
   ]
 
 
-  oneStudent={
+  oneStudent:Student={
     id : null,
     name : "",
     age : null,
@@ -95,7 +97,7 @@ export class StudentComponent implements OnInit {
     // }
   }
 
-  askDelete(a){
+  askDelete(a:Student){
     // console.log(a);
     this.oneStudent=a;
   }
@@ -103,7 +105,7 @@ export class StudentComponent implements OnInit {
     let n = this.studentArr.indexOf(this.oneStudent);
     this.studentArr.splice(n, 1);
   }
-  askEdit(a){
+  askEdit(a:Student){
     this.n = this.studentArr.indexOf(a);
     // this.student=a;
     this.student = Object.assign({}, a);
