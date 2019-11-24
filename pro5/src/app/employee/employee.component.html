@@ -1,0 +1,23 @@
+<button (click)="demo()">OK</button>
+<Div class="container mt-4">
+    <div class="row">
+        <h2>All Employee</h2>
+        <div class="col-md-10 offset-md-1">
+            <table class="table table-bordered table-dark">
+                <tr>
+                    <th>S.No.</th>
+                    <th>Employee Name</th>
+                    <th>Salary</th>
+                    <th>Age</th>
+                
+                </tr>
+                <tr *ngFor="let x of allData">
+                    <td></td>
+                    <td>{{ x.employee_name }}</td>
+                    <td>{{ x.employee_salary }}</td>
+                    <td>{{ x.employee_age }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</Div>
