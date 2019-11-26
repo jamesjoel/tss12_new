@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { EmployeeComponent } from './pages/employee/employee.component';
+import { DeleteComponent } from './sharedcomponent/delete/delete.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    DeleteComponent
   ],
   imports: [
     BrowserModule,

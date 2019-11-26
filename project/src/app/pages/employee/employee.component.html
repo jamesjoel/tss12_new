@@ -17,10 +17,11 @@
                 <td>{{ x.employee_salary }}</td>
                 <td>{{ x.employee_age }}</td>
                 <td><button class="btn btn-sm btn-info">Edit</button></td>
-                <td><button class="btn btn-sm btn-danger">Delete</button></td>
+                <td><button class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delModal" (click)="askDelete(x)">Delete</button></td>
             </tr>
         </table>
 
     </div>
 </div>
 </div>
+<app-delete [employee]="employee" (doDelete)="deleteEmployee()"></app-delete>
