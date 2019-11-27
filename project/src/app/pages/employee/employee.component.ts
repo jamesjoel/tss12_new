@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../../services/employee.service';
+import { Employee, NewEmployee } from '../../models/employee.interface';
 
 @Component({
   selector: 'app-employee',
@@ -8,8 +9,14 @@ import { EmployeeService } from '../../services/employee.service';
 })
 export class EmployeeComponent implements OnInit {
 
-  allData:any[]=[];
-  employee:any={
+  allData:Employee[]=[];
+  index:number;
+  tmpEmployee: NewEmployee = {
+    name: "",
+    age: "",
+    salary: ""
+  };
+  employee:Employee={
     id : "",
     employee_name : "",
     employee_salary : "",
@@ -24,7 +31,7 @@ export class EmployeeComponent implements OnInit {
       this.allData=data;
     });
   }
-  askDelete(x:any){
+  askDelete(x:Employee){
     this.employee=x;
   }
   deleteEmployee(){
@@ -36,5 +43,38 @@ export class EmployeeComponent implements OnInit {
       }
     });
   }
+  add(emp:NewEmployee){
+    if(emp.id){
+      this._emp.editEmployee(emp).subscribe(data=>{
+        var editEmployee = { id : emp.id, employee_name : emp.name, employee_age : emp.age, employee_salary : emp.salary};
+        this.allData[this.index]=editEmployee;
+      });
+    }
+    else{
+      
+        this._emp.addEmployee(emp).subscribe(data=>{
+          var tempEmp = { id : data.id, employee_name : data.name, employee_age : data.age, employee_salary : data.salary};
+          this.allData.push(tempEmp);
+        });
+    }
+
+
+
+    
+  }
+  askEdit(x:Employee, n:number){
+    this.index=n;
+    this.tmpEmployee = { id : x.id, name : x.employee_name, age : x.employee_age, salary : x.employee_salary};
+  }
+  clearEmployee(){
+    this.tmpEmployee={
+      id : "",
+      name : "",
+      age : "",
+      salary : ""
+    }
+  }
+
+
 
 }

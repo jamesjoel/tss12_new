@@ -1,6 +1,9 @@
 <h2>This is Employee Page</h2>
 <div class="container">
-<div class="row">
+    <div class="row">
+    <Br />
+    <button class="btn btn-info" (click)="clearEmployee()" data-target="#addModal" data-toggle="modal">Add New Employee</button>
+    <br />
     <div class="col-md-10 offset-md-1">
         <table class="table table-dark table-bordered">
             <tr>
@@ -16,7 +19,7 @@
                 <td>{{ x.employee_name }}</td>
                 <td>{{ x.employee_salary }}</td>
                 <td>{{ x.employee_age }}</td>
-                <td><button class="btn btn-sm btn-info">Edit</button></td>
+                <td><button class="btn btn-sm btn-info" data-toggle="modal" data-target="#addModal" (click)="askEdit(x, n)">Edit</button></td>
                 <td><button class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delModal" (click)="askDelete(x)">Delete</button></td>
             </tr>
         </table>
@@ -25,3 +28,4 @@
 </div>
 </div>
 <app-delete [employee]="employee" (doDelete)="deleteEmployee()"></app-delete>
+<app-add [employee]="tmpEmployee" (sendData)="add($event)"></app-add>

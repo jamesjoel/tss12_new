@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Employee } from '../../models/employee.interface';
 
 @Component({
   selector: 'app-delete',
@@ -6,7 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./delete.component.scss']
 })
 export class DeleteComponent implements OnInit {
-  @Input() employee:any;
+  @Input() employee:Employee;
   @Output() doDelete = new EventEmitter();
   constructor() { }
 
