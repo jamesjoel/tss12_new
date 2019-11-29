@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "try1-p-t-c": {
+    "crud2": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/try1-p-t-c",
+            "outputPath": "dist/crud2",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -71,18 +71,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "try1-p-t-c:build"
+            "browserTarget": "crud2:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "try1-p-t-c:build:production"
+              "browserTarget": "crud2:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "try1-p-t-c:build"
+            "browserTarget": "crud2:build"
           }
         },
         "test": {
@@ -119,15 +119,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "try1-p-t-c:serve"
+            "devServerTarget": "crud2:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "try1-p-t-c:serve:production"
+              "devServerTarget": "crud2:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "try1-p-t-c"
+  "defaultProject": "crud2"
 }

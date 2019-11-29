@@ -1,0 +1,28 @@
+<div id="addModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>{{ student.id ? "Update" : "Add New" }} Student Here</h2>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Student Name</label>
+                    <input type="text" class="form-control" [(ngModel)]="student.name" />
+                </div>
+                <div class="form-group">
+                    <label>Student Age</label>
+                    <input type="text" class="form-control" [(ngModel)]="student.age" />
+                </div>
+                <div class="form-group">
+                    <label>Student Fee</label>
+                    <input type="text" class="form-control" [(ngModel)]="student.fee" />
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" data-dismiss="modal" (click)="save()">{{ student.id ? "Update" : "Add" }}</button>
+                <button class="btn btn-danger" (click)="clearData()" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -6,11 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'try1-p-t-c';
-  a:string;
-  b:number;
- demo(){
-   console.log(this.a + this.b);
- }
-
+  title = 'crud2';
 }

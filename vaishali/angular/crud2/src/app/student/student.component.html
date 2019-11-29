@@ -1,0 +1,31 @@
+<div class="container mt-4">
+       
+    
+        <h3>Students</h3>
+        Add New Student <button class="btn btn-primary" data-toggle="modal" data-target="#addModal">Add</button>
+        <Hr />
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <table class="table table-dark table-hover table-bordered">
+                    <tr>
+                        <th>S.No.</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Fee</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    <tr *ngFor="let x of studentArr; let n = index">
+                        <td>{{ n+1 }}</td>
+                        <td>{{ x.name }}</td>
+                        <td>{{ x.age }}</td>
+                        <td>{{ x.fee }}</td>
+                        <td><button class="btn btn-sm btn-info" data-target="#addModal" data-toggle="modal" (click)="askEdit(x)">Edit</button></td>
+                        <td><button class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delModal" (click)="askDelete(x)">Delete</button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+<app-del></app-del>
+<app-add1></app-add1>
