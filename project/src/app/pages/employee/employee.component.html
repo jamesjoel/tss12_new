@@ -3,8 +3,8 @@
     <div class="row">
     <Br />
     <button class="btn btn-info" (click)="clearEmployee()" data-target="#addModal" data-toggle="modal">Add New Employee</button>
-    <br />
-    <div class="col-md-10 offset-md-1">
+    
+    <div class="col-md-12">
         <table class="table table-dark table-bordered">
             <tr>
                 <th>S.No.</th>
@@ -28,4 +28,4 @@
 </div>
 </div>
 <app-delete [employee]="employee" (doDelete)="deleteEmployee()"></app-delete>
-<app-add [employee]="tmpEmployee" (sendData)="add($event)"></app-add>
+<app-add [msg]="msg" [employee]="tmpEmployee" (sendData)="add($event)"></app-add>

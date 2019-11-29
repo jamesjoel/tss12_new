@@ -9,6 +9,7 @@
                 <div class="form-group">
                     <label>Employee Name</label>
                     <input type="text" class="form-control" [(ngModel)]="employee.name" />
+                    <p class="text-danger">{{ msg }}</p>
                 </div>
                 <div class="form-group">
                     <label>Employee Age</label>
@@ -20,7 +21,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-success" data-dismiss="modal" (click)="add()">{{ employee.id ? "Update" : "Add" }}</button>
+                <button class="btn btn-success" (click)="add()">{{ employee.id ? "Update" : "Add" }}</button>
                 <button class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
         </div>
