@@ -10,6 +10,7 @@ export class AddComponent implements OnInit {
 
   @Output() sendData = new EventEmitter();
   @Input() employee:NewEmployee;
+  @Input() msg:string;
 
   constructor() { }
 

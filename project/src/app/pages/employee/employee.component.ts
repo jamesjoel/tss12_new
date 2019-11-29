@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../../services/employee.service';
 import { Employee, NewEmployee } from '../../models/employee.interface';
 
+
+
 @Component({
   selector: 'app-employee',
   templateUrl: './employee.component.html',
@@ -10,6 +12,7 @@ import { Employee, NewEmployee } from '../../models/employee.interface';
 export class EmployeeComponent implements OnInit {
 
   allData:Employee[]=[];
+  msg:string="";
   index:number;
   tmpEmployee: NewEmployee = {
     name: "",
@@ -53,8 +56,14 @@ export class EmployeeComponent implements OnInit {
     else{
       
         this._emp.addEmployee(emp).subscribe(data=>{
+          // console.log(data);
           var tempEmp = { id : data.id, employee_name : data.name, employee_age : data.age, employee_salary : data.salary};
           this.allData.push(tempEmp);
+          
+        }, 
+        err=>{
+          // console.log("---------------",err.error);
+          this.msg="This Name Already Exists";
         });
     }
 
