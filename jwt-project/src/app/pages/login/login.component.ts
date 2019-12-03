@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,11 @@ export class LoginComponent implements OnInit {
     username : "",
     password : ""
   }
-  constructor(private _user : UserService) { }
+  constructor(
+      private _user : UserService,
+      private _router : Router
+
+    ) { }
 
   ngOnInit() {
   }
@@ -20,6 +25,7 @@ export class LoginComponent implements OnInit {
     this._user.doLogin(this.user).subscribe(data=>{
       // console.log(data);
       localStorage.setItem("token", data.token);
+      this._router.navigate(["/dashboard"]);
       // this is browser/local variable for check user logged in or not, and used anywhere in angular project
     }, 
     err =>{
