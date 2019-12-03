@@ -1,0 +1,22 @@
+<Br />
+<Br />
+<Br />
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            
+                <div class="form-group">
+                    <label for="email">Username</label>
+                    <input type="text" class="form-control" id="email" [(ngModel)]="log.Username">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password</label>
+                    <input type="password" class="form-control" id="pwd" [(ngModel)]="log.password">
+                </div>
+                
+                <button type="button"(click)="login()" class="btn btn-primary" >Submit</button>
+                 <p class="text-danger">{{errorMsg}}</p>
+            
+        </div>
+    </div>
+</div>
