@@ -13,14 +13,34 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="">Home</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="login">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="signup">Signup</a>
-      </li>
+      <ng-template [ngIf]="_userService.isLoggedIn()" [ngIfElse]="elseCond">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="dashboard">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="profile">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="_userService.logout()" style="cursor: pointer">Logout</a>
+        </li>
+      </ng-template>
+      <ng-template #elseCond>
+        
+        <li class="nav-item">
+          <a class="nav-link" routerLink="login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="signup">Signup</a>
+        </li>
+      </ng-template>
 
     </ul>
   </div>
 </nav>
+
+
+
+
+
+
 <router-outlet></router-outlet>

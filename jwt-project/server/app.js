@@ -5,6 +5,7 @@ var cors = require("cors");
 var MongoClient = require("mongodb").MongoClient;
 var dbUrl = "mongodb://localhost:27017";
 var jwt = require("jsonwebtoken");
+var mongo = require("mongodb");
 
 app.use(bodyParser());
 app.use(cors());
@@ -72,7 +73,45 @@ app.post("/api/user/auth", function(req, res){
 });
 
 
+app.get("/api/user/getuser", verifyToken, function(req, res){
+    // console.log(req.userData);
+    MongoClient.connect(dbUrl, function(err, client){
+        var db = client.db("tss12");
+        db.collection("user").find({ _id : mongo.ObjectId(req.userData.id)}).toArray(function(err, result){
+            res.status(200).send(result[0]);
+        });
+    })
+});
 
+
+function verifyToken(req, res, next){
+    // console.log(req.headers);
+    if (!req.headers.authorization){
+        res.status(401).send({ msg : "Unautorized User"});
+    }
+    else{
+        if (req.headers.authorization =="")
+        {
+            
+            res.status(401).send({ msg : "Unautorized User"});
+        }
+        else
+        {
+            var token = req.headers.authorization;
+            var payload = jwt.verify(token, "this is my secret key");
+            if(! payload){
+                
+                res.status(401).send({ msg : "Unautorized User"});
+            }
+            else
+            {
+                req.userData = payload;
+                next();
+            }
+        }
+    }
+    
+}
 
 
 app.listen(3000, function(){
