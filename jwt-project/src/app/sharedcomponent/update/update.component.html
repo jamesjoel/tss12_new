@@ -1,0 +1,27 @@
+<div id="updateModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Update User</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" class="form-control" [(ngModel)]="user.full_name"/>
+                </div>
+                <div class="form-group">
+                    <label>Username/Email</label>
+                    <input type="text" class="form-control" disabled="disabled" [(ngModel)]="user.username"/>
+                </div>
+                <div class="form-group">
+                    <label>Contact</label>
+                    <input type="text" class="form-control" [(ngModel)]="user.contact"/>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" (click)="update()" data-dismiss="modal">Update</button>
+                <button class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

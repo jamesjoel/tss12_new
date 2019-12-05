@@ -11,6 +11,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { TopHeaderComponent } from './sharedcomponent/top-header/top-header.component';
+import { UpdateComponent } from './sharedcomponent/update/update.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { ProfileComponent } from './pages/profile/profile.component';
     LoginComponent,
     SignupComponent,
     DashboardComponent,
-    ProfileComponent
+    ProfileComponent,
+    TopHeaderComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,

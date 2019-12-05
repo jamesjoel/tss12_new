@@ -18,4 +18,7 @@
             </table>
         </div>
     </div>
+    <br />
+    <button data-toggle="modal" data-target="#updateModal" class="btn btn-info">Edit Your Profile</button>
 </div>
+<app-update [user]="goUserForUpdate" (confEdit)="edit($event)"></app-update>

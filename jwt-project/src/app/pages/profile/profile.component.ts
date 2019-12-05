@@ -16,12 +16,22 @@ export class ProfileComponent implements OnInit {
     contact : "",
     password : ""
   };
+  goUserForUpdate: User = {
+    full_name: "",
+    username: "",
+    contact: "",
+    password: ""
+  };
   
   ngOnInit() {
     this._profile.getUser().subscribe(data=>{
       console.log(data);
       this.user = data;
+      this.goUserForUpdate = Object.assign({}, this.user);
     });
+  }
+  edit(obj){
+    this.user = obj;
   }
   
 

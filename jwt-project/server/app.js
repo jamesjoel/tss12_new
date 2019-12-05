@@ -7,14 +7,17 @@ var dbUrl = "mongodb://localhost:27017";
 var jwt = require("jsonwebtoken");
 var mongo = require("mongodb");
 
+var dbName = "tss12";
+var tblName = "user";
+
 app.use(bodyParser());
 app.use(cors());
 
 
 app.post("/api/signup", function(req, res){
     MongoClient.connect(dbUrl, function(err, client){
-        var db = client.db("tss12");
-        db.collection("user").insert(req.body, function(err, result){
+        var db = client.db(dbName);
+        db.collection(tblName).insert(req.body, function(err, result){
             console.log(result);
             res.send(result.ops[0]);
         }); 
@@ -25,8 +28,8 @@ app.post("/api/signup", function(req, res){
 app.post("/api/user/usernamecheck", function (req, res) {
     // console.log(req.body);
     MongoClient.connect(dbUrl, function (err, client) {
-        var db = client.db("tss12");
-        db.collection("user").find({ username : req.body.username }).toArray(function(err, result){
+        var db = client.db(dbName);
+        db.collection(tblName).find({ username : req.body.username }).toArray(function(err, result){
             if(result.length>0){
                 res.send(false);
             }
@@ -42,8 +45,8 @@ app.post("/api/user/usernamecheck", function (req, res) {
 
 app.post("/api/user/auth", function(req, res){
     MongoClient.connect(dbUrl, function(err, client){
-        var db = client.db("tss12");
-        db.collection("user").find({ username : req.body.username}).toArray(function(err, result){
+        var db = client.db(dbName);
+        db.collection(tblName).find({ username : req.body.username}).toArray(function(err, result){
             if(result.length >= 1)
             {
                 if(result[0].password == req.body.password)
@@ -76,9 +79,24 @@ app.post("/api/user/auth", function(req, res){
 app.get("/api/user/getuser", verifyToken, function(req, res){
     // console.log(req.userData);
     MongoClient.connect(dbUrl, function(err, client){
-        var db = client.db("tss12");
-        db.collection("user").find({ _id : mongo.ObjectId(req.userData.id)}).toArray(function(err, result){
+        var db = client.db(dbName);
+        db.collection(tblName).find({ _id : mongo.ObjectId(req.userData.id)}).toArray(function(err, result){
             res.status(200).send(result[0]);
+        });
+    })
+});
+
+
+app.put("/api/user/getuser/:id", verifyToken, function (req, res) {
+    // console.log(req.userData);
+    // console.log(req.params);
+    // console.log(req.body);
+    MongoClient.connect(dbUrl, function (err, client) {
+        var db = client.db(dbName);
+        delete req.body._id;
+        db.collection(tblName).update({ _id: mongo.ObjectId(req.params.id) }, { $set : req.body }, function (err, result) {
+            console.log(result);
+            res.status(200).send(result);
         });
     })
 });
