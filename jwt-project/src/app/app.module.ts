@@ -13,6 +13,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { TopHeaderComponent } from './sharedcomponent/top-header/top-header.component';
 import { UpdateComponent } from './sharedcomponent/update/update.component';
+import { BonusePipe } from './pipes/bonuse.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { UpdateComponent } from './sharedcomponent/update/update.component';
     DashboardComponent,
     ProfileComponent,
     TopHeaderComponent,
-    UpdateComponent
+    UpdateComponent,
+    BonusePipe
   ],
   imports: [
     BrowserModule,
