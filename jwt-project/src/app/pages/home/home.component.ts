@@ -6,7 +6,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  imageObject=[
+    {
+    image: './assets/images/1.png',
+    thumbImage: './assets/images/1.png',
+    // alt: 'alt of image',
+    title: 'title of image 1'
+    }, 
+    {
+      image: './assets/images/2.jpg',
+      thumbImage: './assets/images/2.jpg',
+      // alt: 'alt of image',
+      title: 'title of image 2'
+    }, 
+    {
+      image: './assets/images/3.jpg',
+      thumbImage: './assets/images/3.jpg',
+      // alt: 'alt of image',
+      title: 'title of image 3'
+    }, 
+    {
+      image: './assets/images/4.jpg',
+      thumbImage: './assets/images/4.jpg',
+      // alt: 'alt of image',
+      title: 'title of image 4'
+    }
+    
+    
+  ];
   data=[
     {
       name : "rohit",
@@ -31,6 +58,8 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+   // this.imagesUrl = ['./assets/images/1.png', './assets/images/2.jpg', './assets/images/3.jpg', './assets/images/4.jpg'];
+  
   }
 
 }

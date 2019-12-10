@@ -2,7 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SliderModule } from 'angular-image-slider';
+import { NgImageSliderModule } from 'ng-image-slider';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +16,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { TopHeaderComponent } from './sharedcomponent/top-header/top-header.component';
 import { UpdateComponent } from './sharedcomponent/update/update.component';
 import { BonusePipe } from './pipes/bonuse.pipe';
+import { MydirDirective } from './direcitves/mydir.directive';
 
 @NgModule({
   declarations: [
@@ -25,13 +28,17 @@ import { BonusePipe } from './pipes/bonuse.pipe';
     ProfileComponent,
     TopHeaderComponent,
     UpdateComponent,
-    BonusePipe
+    BonusePipe,
+    MydirDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    SliderModule,
+    NgImageSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
