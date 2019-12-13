@@ -3,31 +3,67 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4 offset-md-4">
+            <form [formGroup]="user" (submit)="signup()">
             <div class="form-group">
-                <label for="email">Full Name</label>
-                <input type="text" class="form-control" id="email" [(ngModel)]="user.full_name">
+                <label for="hello">Full Name</label>
+                <input type="text" formControlName="full_name" class="form-control" id="email">
+                <div *ngIf="submitted && user.controls.full_name.errors">
+                    <div class="text-danger" *ngIf="submitted && user.controls.full_name.errors.required">
+                        Pls Insert Your Full Name
+                    </div>
+                </div>
+
+
+
+
+
             </div>
 
             <div class="form-group">
                 <label for="email">Username</label>
-                <input type="text" class="form-control" [(ngModel)]="user.username">
-                <p class="text-danger">{{ errorMsg }}</p>
+                <input type="text" formControlName="username" class="form-control">
+                <div *ngIf="submitted && user.controls.username.errors">
+                    <div class="text-danger" *ngIf="submitted && user.controls.username.errors.required">
+                        Insert Your Email Id
+                    </div>
+
+                    <div class="text-danger" *ngIf="submitted && user.controls.username.errors.email">
+                        Insert Correct Email Id
+                    </div>
+                </div>
+                <!-- <p class="text-danger">{{ errorMsg }}</p> -->
             </div>
             <div class="form-group">
                 <label for="pwd">Password</label>
-                <input type="password" class="form-control" id="pwd" [(ngModel)]="user.password">
+                <input type="password" formControlName="password" class="form-control" id="pwd">
+                <div *ngIf="submitted && user.controls.password.errors">
+                    <div class="text-danger" *ngIf="submitted && user.controls.password.errors.required">
+                        Insert Your Password
+                    </div>
+                    <div class="text-danger" *ngIf="submitted && user.controls.password.errors.minlength">
+                        Password should be 8 char
+                    </div>
+                </div>
             </div>
             <div class="form-group">
                 <label for="pwd">Re-Password</label>
-                <input type="password" class="form-control" id="pwd">
+                <input type="password" class="form-control" id="hello">
             </div>
             <div class="form-group">
                 <label for="pwd">Contact</label>
-                <input type="text" class="form-control"  [(ngModel)]="user.contact">
+                <input type="text" formControlName="contact" class="form-control">
+                <div *ngIf="submitted && user.controls.contact.errors">
+                    <div class="text-danger" *ngIf="submitted && user.controls.contact.errors.required">
+                        Insert Your Contact Number
+                    </div>
+                    <div class="text-danger" *ngIf="submitted && user.controls.contact.errors.abc">
+                        Insert Numbers only
+                    </div>
+                </div>
             </div>
 
-            <button type="button" (click)="signup()" class="btn btn-primary">Submit</button>
-
+            <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
         </div>
     </div>
 </div>
